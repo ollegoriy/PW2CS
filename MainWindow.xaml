@@ -1,0 +1,30 @@
+﻿<Window x:Class="PW2CS.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Ежедневник" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Margin="10">
+            <Label>Дата:</Label>
+            <DatePicker x:Name="kakoyden" SelectedDateChanged="kakoydenSDC"/>
+            <Label>Записки:</Label>
+            <ListBox x:Name="zapiski" SelectionChanged="zapiskiSC"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Margin="10">
+            <Label>Заголовок:</Label>
+            <TextBox x:Name="title"/>
+            <Label>Описание:</Label>
+            <TextBox x:Name="desc" TextWrapping="Wrap" AcceptsReturn="True"/>
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Добавить" Click="dobavit"/>
+                <Button Content="Обновить" Click="izmenit"/>
+                <Button Content="Удалить" Click="udalit"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
